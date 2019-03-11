@@ -8,12 +8,7 @@ public class Book implements Parcelable {
 	private String name;
 	private int price;
 	
-	@Override
-	public String toString() {
-		return "{name=" + name + "，price=" + price + "}";
-	}
-	
-	public void readFromParcel(Parcel in) {
+	public void readFromParcel(Parcel in) { //一定要注意，需要手动添加 readFromParcel() 方法
 		this.name = in.readString();
 		this.price = in.readInt();
 	}
@@ -29,12 +24,7 @@ public class Book implements Parcelable {
 		dest.writeInt(this.price);
 	}
 	
-	public Book() {
-	}
-	
-	public Book(String name, int price) {
-		this.name = name;
-		this.price = price;
+	public Book() { //必须有无参构造方法
 	}
 	
 	protected Book(Parcel in) {
@@ -54,6 +44,13 @@ public class Book implements Parcelable {
 		}
 	};
 	
+	//********************************************  可选的  **********************************************
+	
+	public Book(String name, int price) {
+		this.name = name;
+		this.price = price;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -68,5 +65,10 @@ public class Book implements Parcelable {
 	
 	public void setPrice(int price) {
 		this.price = price;
+	}
+	
+	@Override
+	public String toString() {
+		return "{name=" + name + "，price=" + price + "}";
 	}
 }
