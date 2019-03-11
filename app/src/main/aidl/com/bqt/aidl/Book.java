@@ -32,6 +32,11 @@ public class Book implements Parcelable {
 	public Book() {
 	}
 	
+	public Book(String name, int price) {
+		this.name = name;
+		this.price = price;
+	}
+	
 	protected Book(Parcel in) {
 		this.name = in.readString();
 		this.price = in.readInt();

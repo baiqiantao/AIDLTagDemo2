@@ -19,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <service
             android:name=".AIDLService"
             android:permission="com.bqt.permission">
@@ -26,6 +27,7 @@
                 <action android:name="com.bqt.service.aidl"/>
             </intent-filter>
         </service>
+
     </application>
 
 </manifest>
