@@ -14,6 +14,7 @@ public class AIDLService extends Service {
 	@Override
 	public IBinder onBind(Intent intent) {
 		Log.i("bqt", "【Service-onBind】");
+		getApplication();
 		return new MyBind();
 	}
 	
